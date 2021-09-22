@@ -1,0 +1,29 @@
+<!DOCTYPE html><html>
+   <head><title>Leaflet Essentials</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
+      </style>
+</head>
+   <body>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <div id="map"></div>
+    <script>
+      var map = L.map('map',{center: [8.112964, 80.4908154],
+   zoom: 8
+   });
+   L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=MknJr7SP8mqg9FUn0IaE').addTo(map);
+   varusgs =
+   L.tileLayer.wms("http://basemap.nationalmap.gov/ArcGIS/services/USGSImageryTopo/MapServer/WMSServer", {
+   layers:'0',
+   format: 'image/png',
+   transparent: true,
+   attribution: "USGS"
+   }).addTo(map);
+var myMarker = L.marker([7.220, 81.580], {title:"MyPoint",alt:"The Big I",keyboard:true}).addTo(map).bindPopup("<h1> Mark </h1> <p> This is </p>");
+    </script>
+    
+
+
+</body>
+   </html>
